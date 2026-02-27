@@ -1,0 +1,104 @@
+/* Overlay */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 0, 20, 0.85); /* matches --bg-primary */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(6px);
+}
+
+/* Modal Box */
+.modal-content {
+  background: var(--bg-card);
+  width: 420px;
+  max-width: 92%;
+  padding: 28px 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  animation: scaleIn 0.2s ease-in-out;
+}
+
+/* Heading */
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Inputs */
+.modal-content input {
+  width: 100%;
+  padding: 11px 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.modal-content input::placeholder {
+  color: var(--text-muted);
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+}
+
+/* Button Container */
+.modal-content div {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.modal-content button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Update Button (Gradient) */
+.modal-content button:first-child {
+  background: var(--gradient-main);
+  color: white;
+}
+
+.modal-content button:first-child:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Close Button */
+.modal-content button:last-child {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.modal-content button:last-child:hover {
+  background: var(--primary-dark);
+  color: white;
+}
+
+/* Animation */
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

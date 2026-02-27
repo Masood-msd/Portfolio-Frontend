@@ -1,0 +1,387 @@
+.Toastify__toast--success {
+  background: #16a34a !important;
+}
+
+.Toastify__toast--error {
+  background: #dc2626 !important;
+}
+
+.Toastify__toast--warning {
+  background: #f59e0b !important;
+}
+
+.Toastify__toast--info {
+  background: #2563eb !important;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  width:100%;
+  min-height:100%;
+  color: white;
+  overflow-x:hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ========== HERO SECTION ========== */
+
+.section-hero{
+  min-height:100vh;
+  padding:4rem 6rem;
+  display:flex;
+  align-items:center;
+  background: radial-gradient(circle at right,#1a0826,#000);
+}
+
+/* ========= Grid Layout ========== */
+
+.grid-two-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:3rem;
+  width:100%;
+}
+
+/* ========== LEFT CONTENT ========== */
+
+.Title{
+  display:flex;
+  flex-direction:column;
+  gap:1.3rem;
+  max-width:550px;
+}
+/*======== Name ==========*/
+
+.heading-name{
+  font-size:2rem;
+  font-weight:600;
+  color:#e9d5ff;
+  letter-spacing:1px;
+}
+:root {
+  --bg-color: #f4f3ff;
+  --btn-color: #6400f0;
+  --dark-color: #242424;
+  --helper-color: #99b9ff;
+}
+/*======== Main Line =========*/
+
+.hero-title{
+  font-size:2.8rem;
+  font-weight:700;
+  line-height:1.3;
+  background:linear-gradient(135deg,#a855f7,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ======== Tech Stack =========*/
+
+.sub-head{
+  font-size:1rem;
+  color:#a855f7;
+  opacity:0.9;
+}
+
+.grid {
+  display: grid;
+  gap: 6.4rem;
+}
+.sub-head-2{
+  font-size:1rem;
+  color:white;
+  opacity:0.9;
+}
+
+
+
+.Title a{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:0.8rem 1.8rem;
+  margin-top:0.8rem;
+
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+
+  background:linear-gradient(135deg,#7c3aed,#9333ea);
+  color:white;
+
+  box-shadow:0 0 20px rgba(168,85,247,0.4);
+
+  transition:0.3s;
+  
+}
+
+/* Second Button */
+
+.Title a:last-child{
+  background:transparent;
+  border:1px solid #7c3aed;
+  color:#c084fc;
+  box-shadow:none;
+  margin-left:0.8rem;
+}
+
+/* Hover */
+
+.Title a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 35px rgba(168,85,247,0.7);
+}
+
+/* Primary */
+
+.btn-primary{
+  background:linear-gradient(135deg,#7c3aed,#9333ea);
+  color:white;
+  box-shadow:0 0 20px rgba(168,85,247,0.4);
+}
+
+/* Secondary */
+
+.btn-secondary{
+  border:1px solid #7c3aed;
+  color:#c084fc;
+  background:transparent;
+}
+
+/* Hover Effects */
+
+.hero-btns a:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+
+.btn-primary:hover{
+  box-shadow:0 0 40px rgba(168,85,247,0.7);
+}
+
+.btn-secondary:hover{
+  background:#7c3aed;
+  color:white;
+}
+secondhero-span{
+  color: white;
+}
+
+
+#ppimg{
+  width:320px;
+  max-width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:50%;
+
+  background:linear-gradient(#000,#000) padding-box,
+             linear-gradient(135deg,#a855f7,#ec4899) border-box;
+
+  border:3px solid transparent;
+
+  box-shadow:
+    0 0 40px rgba(168,85,247,0.4),
+    inset 0 0 20px rgba(0,0,0,0.6);
+
+  transition:all 0.4s ease;
+}
+
+.profile-img{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:visible;
+}
+
+
+
+#ppimg:hover{
+  transform:scale(1.05) rotate(1deg);
+  box-shadow:
+    0 0 70px rgba(168,85,247,0.7),
+    inset 0 0 30px rgba(0,0,0,0.8);
+}
+
+
+.homepage{
+   background: radial-gradient(circle at right,#1a0826,#000);
+}
+
+
+
+
+/* ========== MOBILE RESPONSIVE ========== */
+
+@media (max-width:900px){
+
+  .section-hero{
+    padding:3rem 2rem;
+  }
+
+  .grid-two-cols{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .Title{
+    margin:auto;
+    align-items:center;
+  }
+
+  .hero-title{
+    font-size:2.2rem;
+  }
+
+  .hero-btns{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  #ppimg{
+    width:240px;
+  }
+
+  .profile-img{
+    margin-top:2.5rem;
+  }
+}
+
+
+/* ========== SMALL MOBILE ========== */
+
+@media (max-width:480px){
+
+  .hero-title{
+    font-size:1.9rem;
+  }
+
+  .heading-name{
+    font-size:1.6rem;
+  }
+
+  .hero-btns a{
+    width:100%;
+    text-align:center;
+  }
+
+}
+/* ========== MIDDLE SECTION WRAPPER ========== */
+
+.middle-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* sab cards same height */
+  gap: 1.5rem;
+
+  padding: 3rem 2rem;
+
+  background: radial-gradient(circle at right, #15061f, #000);
+  width: 100%;
+  flex-wrap: wrap; /* mobile pe wrap ho sake */
+}
+
+
+/* ========== CARD STYLE ========== */
+
+.middle-section .div1 {
+
+  /* Size */
+  width: 250px;
+  min-height: 230px; /* dynamic height */
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  text-align: center;
+
+  /* Background */
+  background: radial-gradient(circle at right, #1a0826, #000);
+
+  /* Border */
+  border: 1px solid rgba(168, 85, 247, 0.25);
+
+  /* Rounded */
+  border-radius: 18px;
+
+  /* Spacing */
+  padding: 1.5rem 1rem;
+
+  /* Text */
+  color: white;
+
+  /* Effects */
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+
+  transition: all 0.35s ease;
+}
+
+
+/* ========== TITLE ========== */
+
+.middle-section .div1 h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #c084fc;
+}
+
+
+/* ========== LIST RESET ========== */
+
+.middle-section .div1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+}
+
+
+/* ========== LIST ITEMS ========== */
+
+.middle-section .div1 ul li {
+  font-size: 0.95rem;
+  padding: 0.35rem 0;
+  opacity: 0.9;
+  cursor: default;
+  line-height: 1.4;
+}
+
+
+/* ========== HOVER EFFECT ========== */
+
+.middle-section .div1:hover {
+
+  transform: translateY(-8px) scale(1.04);
+
+  box-shadow: 0 0 45px rgba(168, 85, 247, 0.6);
+
+  background: radial-gradient(circle at left, #2a0f3f, #000);
+}
+
+
+/* ========== MOBILE RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+
+  .middle-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .middle-section .div1 {
+    width: 100%;
+    min-height: auto;
+  }
+}
+
+

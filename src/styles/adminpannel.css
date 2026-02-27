@@ -1,0 +1,152 @@
+:root {
+  --bg-primary: #0b0014;
+  --bg-secondary: #140021;
+  --bg-card: #1a002b;
+
+  --primary: #a855f7;
+  --primary-dark: #7e22ce;
+  --accent-pink: #ec4899;
+
+  --gradient-main: linear-gradient(90deg, #a855f7, #ec4899);
+
+  --text-main: #f3e8ff;
+  --text-muted: #c4b5fd;
+}
+
+/* Layout */
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-main);
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 260px;
+  background: var(--bg-secondary);
+  padding: 30px 20px;
+  border-right: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.admin-logo {
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nav Links */
+.admin-link {
+  display: block;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: var(--text-muted);
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.admin-link:hover {
+  background: var(--primary-dark);
+  color: white;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.admin-link.active {
+  background: var(--gradient-main);
+  color: white;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+}
+
+/* Main */
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topbar */
+.admin-topbar {
+  height: 70px;
+  background: var(--bg-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.logout-btn {
+  background: var(--gradient-main);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
+}
+
+/* Content */
+.admin-content {
+  padding: 40px;
+}
+
+/* Cards */
+.admin-card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  transition: 0.3s ease;
+}
+
+.admin-card:hover {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+}
+
+/* Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.admin-table th {
+  color: var(--primary);
+  text-align: left;
+}
+
+.admin-table tr:hover {
+  background: rgba(168, 85, 247, 0.08);
+}
+.logout-button{
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .admin-wrapper {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}

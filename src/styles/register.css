@@ -1,0 +1,236 @@
+/* .registerpage{
+     background: radial-gradient(circle at right,#1a0826,#000);
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     height: 100%;
+     width: 100vw;
+}
+
+.registration-form{
+     height: rem;
+     width: 40rem;
+     border: 1px solid wheat;
+}
+.form-lable{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+}
+.submit-btn{
+     width: 80%;
+     padding: 8px;
+     margin-left: 10%;
+}
+.lable-div{
+     margin-bottom: 1.5rem;
+}
+.reg-box{
+     height: auto;
+     margin-left: 1.3rem;
+     margin-right: 1.3rem;
+} */
+
+/* ========== MAIN LAYOUT ========== */
+
+.registerpage {
+  min-height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  padding: 2rem 3rem;
+
+  background: radial-gradient(circle at right, #15061f, #000);
+}
+
+
+/* ========== LEFT IMAGE ========== */
+
+.rgsrt-img {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rgsrt-img img {
+  max-width: 100%;
+  height: auto;
+
+  filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.3));
+}
+
+
+/* ========== FORM CONTAINER ========== */
+
+.registration-form {
+  flex: 1;
+  max-width: 450px;
+
+  background: rgba(26, 8, 38, 0.85);
+  backdrop-filter: blur(12px);
+
+  padding: 2.5rem 2rem;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(168, 85, 247, 0.25);
+
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.25);
+
+  color: white;
+}
+
+
+/* ========== FORM TITLE ========== */
+
+.registration-form h1 {
+  text-align: center;
+
+  margin-bottom: 2rem;
+
+  font-size: 2rem;
+  letter-spacing: 1px;
+
+  color: #c084fc;
+}
+
+
+/* ========== LABEL GROUP ========== */
+
+.lable-div {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1.3rem;
+}
+
+
+/* ========== LABEL ========== */
+
+.lable-div label {
+  margin-bottom: 0.4rem;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  color: #ddd;
+}
+
+
+/* ========== INPUT WRAPPER ========== */
+
+.form-lable {
+  width: 100%;
+}
+
+
+/* ========== INPUT FIELD ========== */
+
+.reg-box {
+  width: 100%;
+
+  padding: 0.7rem 0.9rem;
+
+  border-radius: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background: rgba(0, 0, 0, 0.4);
+
+  color: white;
+
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition: all 0.25s ease;
+}
+
+
+/* Placeholder */
+
+.reg-box::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* Focus Effect */
+
+.reg-box:focus {
+  border-color: #a855f7;
+
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.25);
+
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+/* ========== SUBMIT BUTTON ========== */
+
+.submit-btn {
+  width: 100%;
+
+  margin-top: 1.5rem;
+
+  padding: 0.75rem;
+
+  border-radius: 10px;
+
+  border: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+
+/* Hover */
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+
+  opacity: 0.95;
+}
+
+
+/* Active */
+
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+
+/* ========== MOBILE RESPONSIVE ========== */
+
+@media (max-width: 900px) {
+
+  .registerpage {
+    flex-direction: column;
+
+    gap: 2rem;
+
+    padding: 2rem 1rem;
+  }
+
+  .rgsrt-img img {
+    width: 280px;
+  }
+
+  .registration-form {
+    width: 100%;
+  }
+}
