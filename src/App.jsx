@@ -5,7 +5,7 @@ import MyWork from './elements/Work';
 import Contact from './elements/Contact';
 import Login from './elements/Login';
 import Register from './elements/Register';
-import Navbar from './elements/nav';
+import Navbar from './elements/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ErrorPage from './elements/Error';
 import { Logout } from './elements/Logout';
