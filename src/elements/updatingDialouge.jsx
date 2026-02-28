@@ -46,7 +46,7 @@ export default function MyComponent({ isOpen, onClose, userData, fetchUsers }) {
       );
 
       if (response.ok) {
-        fetchUsers();
+        await fetchUsers();
         toast.success("Updated Successfully")
         onClose();     
       }else{
@@ -89,7 +89,7 @@ export default function MyComponent({ isOpen, onClose, userData, fetchUsers }) {
         />
 
         <div>
-          <button onClick={handleUpdate}>Update</button>
+          <button onClick={handleUpdate} type="submit">Update</button>
           <button onClick={onClose}>Close</button>
         </div>
       </div>
