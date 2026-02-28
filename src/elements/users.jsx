@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 export default function AllUsers() {
   const [users, setUsers] = useState([]);
-  const { AuthorizationToken, API} = useAuth();
+  const { AuthorizationToken, API } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
@@ -32,22 +32,19 @@ export default function AllUsers() {
 
   const deleteUserByID = async (id) => {
     try {
-      const response = await fetch(
-        `${API}/api/admin/users/delete/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: AuthorizationToken,
-          },
+      const response = await fetch(`${API}/api/admin/users/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: AuthorizationToken,
         },
-      );
-      const data = await response.json(); 
+      });
+      const data = await response.json();
       console.log("Users:", data);
       if (response.ok) {
-        toast.success("Deleted Successfully")
+        toast.success("Deleted Successfully");
         fetchUsers();
-      }else{
-        toast.error("Fail to Delete")
+      } else {
+        toast.error("Fail to Delete");
       }
     } catch (error) {
       console.log("Error from delete Section", error);
@@ -63,47 +60,48 @@ export default function AllUsers() {
   return (
     <div className="admin-users-container">
       <h2>All Registered Users</h2>
-
-      <table className="users-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {users.map((user, index) => (
-            <tr key={user._id}>
-              <td>{index + 1}</td>
-              <td>{user.username}</td>
-              <td>{user.email}</td>
-              <td>
-                <button
-                  className="edit-btn"
-                  onClick={() => {
-                    setSelectedUser(user);
-                    setIsModalOpen(true);
-                  }}
-                >
-                  Edit
-                </button>
-              </td>
-              <td>
-                <button
-                  className="delete-btn"
-                  onClick={() => deleteUserByID(user._id)}
-                >
-                  Delete
-                </button>
-              </td>
+      <div className="table-responsive">
+        <table className="users-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Edit</th>
+              <th>Delete</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={user._id}>
+                <td>{index + 1}</td>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+                <td>
+                  <button
+                    className="edit-btn"
+                    onClick={() => {
+                      setSelectedUser(user);
+                      setIsModalOpen(true);
+                    }}
+                  >
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className="delete-btn"
+                    onClick={() => deleteUserByID(user._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <MyComponent
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

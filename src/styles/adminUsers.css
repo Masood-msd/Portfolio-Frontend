@@ -60,3 +60,53 @@
 .delete-btn:hover {
   background-color: #c0392b;
 }
+
+/* 🔥 responsive wrapper */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* prevent ugly squeezing */
+.users-table {
+  min-width: 600px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .admin-users-container {
+    padding: 20px 10px;
+    width: 100%;
+  }
+
+  .admin-users-container h2 {
+    font-size: 20px;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+
+/* =============== SMALL PHONES =============== */
+@media (max-width: 480px) {
+  .users-table th,
+  .users-table td {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+}
