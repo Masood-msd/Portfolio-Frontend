@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAuth } from "../store/auth.jsx";
 import "../styles/work.css";
 
@@ -21,16 +22,16 @@ export default function MyWork() {
                 <p className="card-text">{details.description}</p>
 
                 <div className="card-footer">
-                  <a
+                  <Link
                     className="card-link"
                     href={details.github}
                     target="_blank"
                   >
                     Github
-                  </a>
-                  <a className="card-link" href={details.live} target="_blank">
+                  </Link>
+                  <Link className="card-link" href={details.live} target="_blank">
                     Website
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

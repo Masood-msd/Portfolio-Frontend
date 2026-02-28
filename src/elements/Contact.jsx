@@ -112,7 +112,7 @@ useEffect(() => {
               rows="5"
             ></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="button">Send Message</button>
           </form>
         </div>
       </section>
