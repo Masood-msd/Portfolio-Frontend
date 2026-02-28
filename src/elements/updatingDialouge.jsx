@@ -4,7 +4,7 @@ import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
 export default function MyComponent({ isOpen, onClose, userData, fetchUsers }) {
-  const { AuthorizationToken } = useAuth();
+  const { AuthorizationToken, API } = useAuth();
 
   const [data, setData] = useState({
     name: "",
@@ -34,7 +34,7 @@ export default function MyComponent({ isOpen, onClose, userData, fetchUsers }) {
   const handleUpdate = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/admin/users/update/${userData._id}`,
+        `${API}/api/admin/users/update/${userData._id}`,
         {
           method: "PATCH",
           headers: {
@@ -82,14 +82,14 @@ export default function MyComponent({ isOpen, onClose, userData, fetchUsers }) {
 
         <input
           type="text"
-          name="phoneNumber"
+          name="number"
           value={data.number}
           onChange={handleChange}
           placeholder="Phone Number"
         />
 
         <div>
-          <button onClick={handleUpdate} type="submit">Update</button>
+          <button onClick={handleUpdate} type="button">Update</button>
           <button onClick={onClose}>Close</button>
         </div>
       </div>
