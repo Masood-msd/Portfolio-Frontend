@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Home() {
   return (
     <div className="homepage">
@@ -10,8 +12,8 @@ export default function Home() {
               <p className="sub-head">
                 Full Stack Developer | React • Node • MongoDB • Express
               </p>
-              <a href="/work">View My Work</a>
-              <a href="/Contact">Hire Me</a>
+              <Link className="a"to="/work">View My Work</Link>
+              <Link className="a" to="/Contact">Hire Me</Link>
             </div>
             <div>
               <div className="profile-img">
@@ -21,6 +23,7 @@ export default function Home() {
                   className=" img-fluid "
                   alt="Admin Profile Picture"
                 />
+                Link
               </div>
             </div>
           </div>
