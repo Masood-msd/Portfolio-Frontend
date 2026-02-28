@@ -10,7 +10,7 @@ export default function Home() {
               <p className="sub-head">
                 Full Stack Developer | React • Node • MongoDB • Express
               </p>
-              <a href="/service">View My Work</a>
+              <a href="/work">View My Work</a>
               <a href="/Contact">Hire Me</a>
             </div>
             <div>
