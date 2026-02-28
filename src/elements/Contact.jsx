@@ -4,8 +4,7 @@ import "../styles/contact.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 
-
-export default function contact() {
+export default function Contact() {
   const [contact, setContact] = useState({
     username: "",
     email: "",
@@ -15,15 +14,15 @@ export default function contact() {
   const { user, API } = useAuth();
   const navigate = useNavigate();
 
-useEffect(() => {
-  if (user) {
-    setContact({
-      username: user.username,
-      email: user.email,
-      message: "",
-    });
-  }
-}, [user]);
+  useEffect(() => {
+    if (user) {
+      setContact({
+        username: user.username,
+        email: user.email,
+        message: "",
+      });
+    }
+  }, [user]);
 
   function HandleInput(e) {
     const name = e.target.name;
@@ -48,20 +47,19 @@ useEffect(() => {
 
       const data = await res.json();
 
-      if (res.ok) { 
-      alert("Feedback submitted successfully");
-      setContact({ username: "", email: "", message: "" });
-      navigate("/");
-      }
-       alert(data.message || "Something went wrong . Please try again");
+      if (res.ok) {
+        alert("Feedback submitted successfully");
+        setContact({ username: "", email: "", message: "" });
+        navigate("/");
+      } else {
+        alert(data.message || "Something went wrong. Please try again");
         navigate("/contact");
-
+      }
     } catch (err) {
-      console.log(err.message || "Contact error")
-      alert(err.message)
+      console.log(err.message || "Contact error");
+      alert(err.message);
     }
   };
- 
 
   return (
     <main className="contact-page">
