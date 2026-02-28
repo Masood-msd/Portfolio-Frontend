@@ -91,8 +91,8 @@ export default function Home() {
                 Focused on writing efficient code and growing as a professional
                 developer.
               </p>
-              <a href="/Contact">Submit a Suggestion</a>
-              <a href="/Contact">Contact Us</a>
+              <Link className="a" to="/Contact">Submit a Suggestion</Link>
+              <Link className="a" to="/Contact">Contact Us</Link>
             </div>
           </div>
         </section>
