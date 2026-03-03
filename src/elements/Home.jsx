@@ -46,7 +46,7 @@ export default function Home() {
           <div className="div1">
             <h3>Projects</h3>
             <ul>
-              <li>E-commerce Website</li>
+              <li></li>
               <li>Portfolio Website</li>
               <li>Login/Auth System</li>
               <li>REST API</li>
