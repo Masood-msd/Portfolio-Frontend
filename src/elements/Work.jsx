@@ -23,7 +23,7 @@ export default function MyWork() {
 
                 <div className="card-footer">
                   <Link
-                    className="card-link"
+                    className="card-link border-1 rounded-1"
                     href={details.github}
                     target="_blank"
                   >
