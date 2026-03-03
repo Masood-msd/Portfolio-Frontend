@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../store/auth";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, isAdmin } = useAuth();
 
   return (
     <header className="head">
@@ -46,16 +46,22 @@ export default function Navbar() {
               Contact
             </NavLink>
           </li>
+          {/* Admin tab */}
+          {isLoggedIn && isAdmin && (
+            <li>
+              <NavLink to="/admin" onClick={() => setOpen(false)}>
+                Admin
+              </NavLink>
+            </li>
+          )}
 
-          {isLoggedIn ?  
-          (
+          {isLoggedIn ? (
             <li>
               <NavLink to="/logout" onClick={() => setOpen(false)}>
                 Logout
               </NavLink>
             </li>
-          ) : 
-          (
+          ) : (
             <>
               <li>
                 <NavLink to="/Login" onClick={() => setOpen(false)}>
@@ -68,8 +74,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
             </>
-          )
-        }
+          )}
         </ul>
       </nav>
     </header>

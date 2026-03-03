@@ -9,14 +9,17 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState(null);
   // eslint-disable-next-line no-unused-vars
-  const [isAdmin, setIsAdmin] = useState(localStorage.getItem("isAdmin"));
-  const [isLoading, setIsLoading] = useState(true)
+  const [isAdmin, setIsAdmin] = useState(
+    localStorage.getItem("isAdmin") === "true",
+  );
+  const [isLoading, setIsLoading] = useState(true);
   const [work, setWork] = useState([]);
-  const AuthorizationToken = `Bearer ${token}`
+
+  const AuthorizationToken = `Bearer ${token}`;
 
   // API KEY GATHERING  ====================
 
-  const API = import.meta.env.VITE_API_KEY
+  const API = import.meta.env.VITE_API_KEY;
 
   //  login functionality ========================
   const isLoggedIn = !!token;
@@ -45,7 +48,7 @@ export const AuthProvider = ({ children }) => {
   const userApi = `${API}/api/auth/user`;
   const userDetails = async () => {
     try {
-      setIsLoading(true)
+      setIsLoading(true);
       const response = await fetch(userApi, {
         method: "GET",
         headers: {
@@ -57,11 +60,12 @@ export const AuthProvider = ({ children }) => {
         const data = await response.json();
         console.log(data);
         localStorage.setItem("isAdmin", data.userData.isAdmin);
+        setIsAdmin(data.userData.isAdmin);
         setUser(data.userData);
-        setIsLoading(false)
+        setIsLoading(false);
       } else {
-        console.log("Failed to load data from USER")
-        setIsLoading(false)
+        console.log("Failed to load data from USER");
+        setIsLoading(false);
         setUser(null);
       }
     } catch (err) {
@@ -76,8 +80,6 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   // Showing all work===============================
-
-
 
   const handleWorkData = async () => {
     try {
@@ -100,7 +102,17 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, storeTokenInLs, LogoutUser, user, work, AuthorizationToken, isLoading, API}}
+      value={{
+        isLoggedIn,
+        isAdmin,
+        storeTokenInLs,
+        LogoutUser,
+        user,
+        work,
+        AuthorizationToken,
+        isLoading,
+        API,
+      }}
     >
       {children}
     </AuthContext.Provider>
