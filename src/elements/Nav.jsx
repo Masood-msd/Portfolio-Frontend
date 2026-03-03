@@ -50,7 +50,7 @@ export default function Navbar() {
           {isLoggedIn && isAdmin && (
             <li>
               <NavLink to="/admin" onClick={() => setOpen(false)}>
-                Admin
+                Admin Dashboard
               </NavLink>
             </li>
           )}
