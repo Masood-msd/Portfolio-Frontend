@@ -22,16 +22,22 @@ export default function MyWork() {
                 <p className="card-text">{details.description}</p>
 
                 <div className="card-footer">
-                  <Link
+                  <a
                     className="card-link border-1 rounded-1"
                     href={details.github}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Github
-                  </Link>
-                  <Link className="card-link" href={details.live} target="_blank">
+                  </a>
+                  <a
+                    className="card-link"
+                    href={details.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Website
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
