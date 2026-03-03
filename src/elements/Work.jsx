@@ -21,7 +21,7 @@ export default function MyWork() {
 
                 <p className="card-text">{details.description}</p>
 
-                <div className="card-footer">
+                <div className="card-footer d-flex justify-content-between w-100">
                   <div className="mx-3">
                     <a
                       className="card-link border-1 rounded-1"
